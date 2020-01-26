@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/repo_details_header"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/smooth_right_corners"
+        android:layout_width="250dp"
+        android:layout_height="150dp">
+        <TextView
+            android:text="Tetris-React"
+            android:textSize="25sp"
+            android:layout_centerInParent="true"
+            android:id="@+id/tv_repo_details_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_repo_details_owner"
+        android:layout_margin="10dp"
+        android:layout_alignParentRight="true"
+        android:text="VISIT OWNER"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/tv_repo_details_language"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/repo_details_header"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="Language: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:id="@+id/repo_details_separator"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_repo_details_language"
+        android:background="@color/white"
+        android:layout_width="350dp"
+        android:layout_height="1dp"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/tv_repo_details_date"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/repo_details_separator"
+        android:text="Date Created:  "
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/repo_details_description"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:text="Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_repo_details_date" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_repo_details_description"
+        app:cardCornerRadius="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/repo_details_description"
+        android:layout_centerInParent="true"
+        android:layout_width="320dp"
+        android:layout_height="120dp">
+
+        <TextView
+            android:id="@+id/tv_repo_details_description"
+            android:layout_margin="5dp"
+            android:textSize="18sp"
+            android:text="Description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tv_repo_details_forks"
+        android:layout_below="@id/cv_repo_details_description"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="Number Of Forks: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_repo_details_watchers"
+        android:layout_below="@id/tv_repo_details_forks"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="Number Of Watchers: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_repo_details_issues"
+        android:layout_below="@id/tv_repo_details_watchers"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="Number Of Issues: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_repo_details_more"
+        android:text="More Details"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/tv_repo_details_issues"
+        android:background="@drawable/smooth_corner"
+        android:layout_width="200dp"
+        android:layout_height="50dp"/>
+
+</RelativeLayout>

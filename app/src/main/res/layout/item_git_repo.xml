@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="@color/colorPrimaryDark"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp"
+    android:layout_width="match_parent"
+    android:id="@+id/cv_main_item_project"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_height="150dp"
+    app:cardUseCompatPadding="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/iv_client_item_avatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/item_project_name"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:text="Repository Name"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/item_owner_full_name"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/iv_client_item_avatar"
+            android:textSize="15sp"
+            android:text="Repo Owner"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_project_description"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_project_name"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="4dp"
+            android:text="Description"
+            android:textColor="@color/white" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/item_owner_full_name"
+            android:background="@color/white"
+            android:layout_width="300dp"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:id="@+id/item_project_noIssues"
+            android:layout_marginRight="15dp"
+            android:layout_below="@id/view"
+            android:layout_alignParentRight="true"
+            android:text="Isuess: "
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/item_project_noForks"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/view"
+            android:text="Forks: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_project_noWatchers"
+            android:layout_marginLeft="5dp"
+            android:text="Watchers: "
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

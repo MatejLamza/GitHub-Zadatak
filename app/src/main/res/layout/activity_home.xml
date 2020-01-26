@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.SearchView
+        android:tooltipText="Search"
+        android:textDirection="rtl"
+        android:id="@+id/sv_repositories"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/smooth_corner"
+        android:layout_width="245dp"
+        android:layout_height="35dp"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="150dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/sv_repositories"
+        android:text="SORT BY: "
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:id="@+id/ddl_sort"
+        android:layout_below="@id/sv_repositories"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ProgressBar
+        android:id="@+id/load_spinner"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+
+    <View
+        android:id="@+id/separator"
+        android:layout_marginTop="60dp"
+        android:layout_below="@id/sv_repositories"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/white" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_projects"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

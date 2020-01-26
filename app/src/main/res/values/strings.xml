@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Git-Zadatak</string>
+
+    <string-array name="drop_down_sort">
+        <item>Stars</item>
+        <item>Forks</item>
+        <item>Updated</item>
+    </string-array>
+</resources>

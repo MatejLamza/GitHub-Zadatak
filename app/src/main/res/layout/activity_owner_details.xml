@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/iv_owner_details_avatar"
+        android:background="@drawable/smooth_corner"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"/>
+
+    <TextView
+        android:id="@+id/tv_owner_details_name"
+        android:layout_below="@id/iv_owner_details_avatar"
+        android:text="User Name"
+        android:layout_centerHorizontal="true"
+        android:textSize="35sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:id="@+id/owner_details_separator"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_owner_details_name"
+        android:background="@color/white"
+        android:layout_width="300dp"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:id="@+id/header_owner"
+        android:orientation="horizontal"
+        android:layout_below="@id/owner_details_separator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:text="Location:"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_owner_details_location"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/owner_details_separator"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginLeft="80dp"
+        android:layout_below="@id/header_owner"
+        android:layout_marginTop="10dp"
+        android:text="Email: "
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_owner_details_email"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@id/header_owner"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/header_owner_under"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tv_owner_details_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Company: "
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_owner_Details_company"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@color/white"
+            android:layout_below="@id/owner_details_separator"
+            android:layout_width="1dp"
+            android:layout_height="20dp"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:text="Followers: "
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_owner_details_followers"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/owner_details_separator"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_owner_details_bio"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="16dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/header_owner_under"
+        android:layout_width="300dp"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/tv_owner_details_bio"
+            android:layout_margin="5dp"
+            android:text="Bio owner"
+            android:textSize="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_owner_details"
+        android:text="MORE"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/smooth_corner"
+        android:layout_width="250dp"
+        android:layout_height="50dp"/>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
