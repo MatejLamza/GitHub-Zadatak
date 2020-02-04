@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "847744405950",
+    "firebase_url": "https://github-aa506.firebaseio.com",
+    "project_id": "github-aa506",
+    "storage_bucket": "github-aa506.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847744405950:android:83938fe348e0feec9b29ef",
+        "android_client_info": {
+          "package_name": "com.example.git_zadatak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847744405950-iu8dg5abkojv3m0qa9mq6skgcslb5qsm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.git_zadatak",
+            "certificate_hash": "6adce2f4ed6651ba7153c77faabe9a4bed84478e"
+          }
+        },
+        {
+          "client_id": "847744405950-f75na2kv7bmlu5kh4jadf30h2cpfc137.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCadwiOcegzxhdsmbQ05FMsOyqd9-CBwRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847744405950-ljsf8b09prr5388628rsjjtccbdcritj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

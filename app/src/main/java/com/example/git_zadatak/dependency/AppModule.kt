@@ -2,17 +2,19 @@ package com.example.git_zadatak.dependency
 
 import android.content.Context
 import androidx.room.Room
+import com.example.git_zadatak.R
 import com.example.git_zadatak.base.BaseApp
-import com.example.git_zadatak.data.network.GitDataSource
-import com.example.git_zadatak.data.network.GitDataSourceImpl
 import com.example.git_zadatak.data.database.GitDAO
 import com.example.git_zadatak.data.database.GitDatabase
-import com.example.git_zadatak.data.network.ConnectivityDetection
-import com.example.git_zadatak.data.network.ConnectivityDetectionImpl
+import com.example.git_zadatak.data.network.*
 import com.example.git_zadatak.data.network.service.GitService
 import com.example.git_zadatak.data.repositories.GitRepo
 import com.example.git_zadatak.data.repositories.GitRepoImpl
 import com.example.git_zadatak.utils.MyConsts
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.auth.FirebaseAuth
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides
@@ -79,6 +81,29 @@ class AppModule {
     @Singleton
     fun provideGitDAO(db:GitDatabase):GitDAO{
         return db.getGitDAO()
+    }
+
+    @Provides
+    @Singleton
+    fun provideGoogleSignInClient(context: Context):GoogleSignInClient{
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(context.getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+        return GoogleSignIn.getClient(context,gso)
+    }
+
+    @Provides
+    @Singleton
+    fun provideFirebaseAuth(): FirebaseAuth {
+        return FirebaseAuth.getInstance()
+    }
+
+    @Provides
+    @Singleton
+    fun provideOnlineUserLogin(onlineUserLoginImpl: OnlineUserLoginImpl):OnlineUserLogin{
+        return onlineUserLoginImpl
     }
 
 }

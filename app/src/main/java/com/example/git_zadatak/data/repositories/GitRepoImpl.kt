@@ -5,11 +5,20 @@ import com.example.git_zadatak.data.network.GitDataSource
 import com.example.git_zadatak.data.database.GitDAO
 import com.example.git_zadatak.data.models.GitResponseModel
 import com.example.git_zadatak.data.models.GitUser
+import com.example.git_zadatak.data.network.OnlineUserLogin
 import kotlinx.coroutines.*
 import javax.inject.Inject
 
 class GitRepoImpl
-@Inject constructor(val gitDataSource: GitDataSource, val gitDao:GitDAO): GitRepo {
+@Inject constructor(val gitDataSource: GitDataSource,
+                    val gitDao:GitDAO,
+                    val onlineUserLogin: OnlineUserLogin): GitRepo {
+
+    override suspend fun signInWithGoogle(tokenId: String): LiveData<Boolean> {
+        return withContext(Dispatchers.IO){
+            return@withContext onlineUserLogin.signInWithGoogle(tokenId)
+        }
+    }
 
     override suspend fun fetchRepoOwnerDetailsFromCache(): GitUser {
         return withContext(Dispatchers.IO){

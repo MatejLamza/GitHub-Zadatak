@@ -10,6 +10,9 @@ class MyConsts {
         //DATABASE
         val DATABASE_NAME = "GitDatabase"
 
+        //CODES
+        val RC_SIGN_IN = 9001
+
         //LOG
         val LOG_TAG = "aaa"
 

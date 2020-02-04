@@ -16,14 +16,17 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".view.ui.HomeActivity">
+
+        </activity>
+        <activity android:name=".view.ui.RepoDetailsActivity"/>
+        <activity android:name=".view.ui.OwnerDetailsActivity"/>
+        <activity android:name=".view.ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.ui.RepoDetailsActivity"/>
-        <activity android:name=".view.ui.OwnerDetailsActivity"/>
     </application>
 
 </manifest>
