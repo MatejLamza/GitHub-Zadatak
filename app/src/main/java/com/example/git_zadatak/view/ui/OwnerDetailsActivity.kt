@@ -29,7 +29,6 @@ class OwnerDetailsActivity:ScopedActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_owner_details)
 
-        getDataFromBundle()
 
         ownerDetailsVM = ViewModelProviders.of(this,factory).get(OwnerDetailsViewModel::class.java)
         ownerDetailsVM.getCachedRepoOwner()
@@ -51,12 +50,6 @@ class OwnerDetailsActivity:ScopedActivity() {
         Glide.with(this)
             .load(imageURL)
             .into(iv_owner_details_avatar)
-    }
-
-    private fun getDataFromBundle(){
-        if (intent.hasExtra(MyConsts.EXTRA_PROJECT_ITEM)){
-            recivedProject = intent.getSerializableExtra(MyConsts.EXTRA_PROJECT_ITEM) as Item
-        }
     }
 
     private fun initView(user:GitUser){

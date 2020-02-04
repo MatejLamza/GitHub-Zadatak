@@ -18,5 +18,6 @@ class MyConsts {
 
         // INTENTS
         val EXTRA_PROJECT_ITEM = "extra_project_item"
+        val EXTRA_UI_FLAG = "user_not_logged_in"
     }
 }

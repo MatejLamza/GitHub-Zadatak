@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:background="@color/colorPrimary"
+    android:background="@color/blueish"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/repos"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="25dp"
+        android:text="Github"
+        android:textSize="35sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_below="@id/repos"
+        android:text="Repositories"
+        android:textSize="35sp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="85dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_centerInParent="true"
+        android:src="@drawable/github_logo"
+        android:layout_width="250dp"
+        android:layout_height="250dp"/>
 
 
     <ProgressBar
@@ -15,12 +40,24 @@
 
 
     <com.google.android.gms.common.SignInButton
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:id="@+id/btn_google_login"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/tv_skip_login"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btn_google_login"
+        android:text="Skip login"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
 </RelativeLayout>

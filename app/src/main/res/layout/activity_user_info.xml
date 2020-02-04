@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:background="@drawable/header_background"
+        android:id="@+id/iv_user_info_header"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/iv_user_info_avatar"
+        android:layout_marginTop="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <View
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/separator_user"
+        android:layout_below="@id/iv_user_info_avatar"
+        android:background="@color/white"
+        android:layout_width="350dp"
+        android:layout_height="1dp"/>
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/separator_user"
+        android:id="@+id/tv_user_info_email"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_user_info_name"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/iv_user_info_avatar"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_marginBottom="50dp"
+        android:id="@+id/btn_log_out"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_button"
+        android:layout_alignParentBottom="true"
+        android:text="Log Out"
+        android:textSize="15sp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"/>
+
+
+
+</RelativeLayout>

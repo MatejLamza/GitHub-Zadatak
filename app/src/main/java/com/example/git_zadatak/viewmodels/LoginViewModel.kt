@@ -7,6 +7,7 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.git_zadatak.data.models.UserProfile
 import com.example.git_zadatak.data.repositories.GitRepo
 import com.example.git_zadatak.utils.MyConsts
 import com.example.git_zadatak.utils.internal.ActivityNavigation
@@ -40,6 +41,16 @@ class LoginViewModel
         }
     }
 
+    private fun cacheUserProfile(userProfile: UserProfile){
+        viewModelScope.launch {
+            try {
+                gitRepo.cacheUserProfile(userProfile)
+            } catch (ex:Exception){
+                Log.d(MyConsts.LOG_TAG,"Cache User Profile: ${ex.message}")
+            }
+        }
+    }
+
     fun onResultFromActivity(requestCode:Int?, data: Intent?){
         when (requestCode) {
             MyConsts.RC_SIGN_IN -> {
@@ -47,6 +58,8 @@ class LoginViewModel
                 try {
                     val account = task.getResult(ApiException::class.java)
                     if (account != null) {
+                        val user = UserProfile(account.email!!,account.displayName!!,account.photoUrl.toString())
+                        cacheUserProfile(user)
                         viewModelScope.launch {
                             try {
                                 spinner.value = true
@@ -54,14 +67,14 @@ class LoginViewModel
                                     loginSuccess.value = it
                                 }
                             } catch (exception:Exception){
-                                Log.d("aaa","Message:${exception.message}")
+                                Log.d(MyConsts.LOG_TAG,"Google Sing in:${exception.message}")
                             } finally {
                                 spinner.value = false
                             }
                         }
                     }
                 } catch (exc:ApiException){
-                    Log.w("aaa", "Google sign in failed", exc)
+                    Log.w(MyConsts.LOG_TAG, "Google sign in failed", exc)
                 }
             }
         }

@@ -1,6 +1,7 @@
 package com.example.git_zadatak.view.ui
 
 import android.content.Intent
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -36,10 +37,14 @@ class HomeActivity : ScopedActivity(), GitResponseAdapter.OnRepositoryClickListe
     private lateinit var manager: LinearLayoutManager
     private lateinit var adapter: GitResponseAdapter
 
+    private var userLoggedInFlag:Boolean = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        getDataFromBundle()
 
         initRecyclerView()
         initSpinner()
@@ -61,6 +66,14 @@ class HomeActivity : ScopedActivity(), GitResponseAdapter.OnRepositoryClickListe
             }
         })
 
+        if (!userLoggedInFlag){
+            iv_info.visibility = View.GONE
+        }
+
+        iv_info.setOnClickListener {
+            val intent = Intent(this,UserProfileActivity::class.java)
+            startActivity(intent)
+        }
 
         homeVM.liveRepoOwner.observe(this, Observer {
             GlobalScope.launch {
@@ -71,7 +84,6 @@ class HomeActivity : ScopedActivity(), GitResponseAdapter.OnRepositoryClickListe
                 }
             }
         })
-
 
         homeVM.liveRepos.observe(this, Observer {
             repoList = it.items as ArrayList<Item>
@@ -85,7 +97,6 @@ class HomeActivity : ScopedActivity(), GitResponseAdapter.OnRepositoryClickListe
             }
         })
     }
-
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -138,5 +149,11 @@ class HomeActivity : ScopedActivity(), GitResponseAdapter.OnRepositoryClickListe
         adapter.setOnRepositoryClickListener(this)
         recyclerView.layoutManager = manager
         recyclerView.adapter = adapter
+    }
+
+    private fun getDataFromBundle(){
+        if (intent.hasExtra(MyConsts.EXTRA_UI_FLAG)){
+            userLoggedInFlag = intent.getSerializableExtra(MyConsts.EXTRA_UI_FLAG) as Boolean
+        }
     }
 }

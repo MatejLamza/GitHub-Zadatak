@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.git_zadatak.data.models.GitResponseModel
 import com.example.git_zadatak.data.models.GitUser
+import com.example.git_zadatak.data.models.UserProfile
 import com.example.git_zadatak.data.repositories.GitRepo
 import com.example.git_zadatak.utils.MyConsts
 import com.example.git_zadatak.view.ui.OwnerDetailsActivity
@@ -22,7 +23,6 @@ class HomeViewModel
     var spinner: MutableLiveData<Boolean> = MutableLiveData()
 
 
-    //TODO custom exception
     fun getNewRepos(query: String) {
         viewModelScope.launch {
             try {

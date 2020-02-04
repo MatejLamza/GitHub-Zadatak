@@ -3,6 +3,7 @@ package com.example.git_zadatak.data.repositories
 import androidx.lifecycle.LiveData
 import com.example.git_zadatak.data.models.GitResponseModel
 import com.example.git_zadatak.data.models.GitUser
+import com.example.git_zadatak.data.models.UserProfile
 
 interface GitRepo {
 
@@ -14,5 +15,8 @@ interface GitRepo {
 
     //Offline Database
     suspend fun cacheRepoOwner(gitUser: GitUser)
+    suspend fun cacheUserProfile(userProfile: UserProfile)
+
     suspend fun fetchRepoOwnerDetailsFromCache():GitUser
+    suspend fun fetchUserProfileFromCache():UserProfile
 }

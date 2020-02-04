@@ -52,6 +52,12 @@ class LoginActivity:AppCompatActivity(),ActivityNavigation {
             loginVM.signInWithGoogle()
         }
 
+        tv_skip_login.setOnClickListener {
+            val intent = Intent(this,HomeActivity::class.java)
+            intent.putExtra(MyConsts.EXTRA_UI_FLAG,false)
+            startActivity(intent)
+        }
+
         loginVM.spinner.observe(this) { value ->
             value.let { show ->
                 spinner.visibility = if (show) View.VISIBLE else View.GONE
@@ -63,13 +69,11 @@ class LoginActivity:AppCompatActivity(),ActivityNavigation {
                 loginVM.forwardToHomeScreen(this)
             }
         })
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         loginVM.onResultFromActivity(requestCode,data)
         super.onActivityResult(requestCode, resultCode, data)
-
     }
 
 
